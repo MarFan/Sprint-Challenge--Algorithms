@@ -2,13 +2,13 @@
 
 ## Exercise I
 
-a)
+a) O(n) - one operations 
 
 
-b)
+b) O(n log n) - nested loops and few different operations
 
 
-c)
+c) O(n) - My note say O(n) because of the use of recursion
 
 ## Exercise II
 
