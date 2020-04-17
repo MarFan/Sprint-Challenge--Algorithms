@@ -2,7 +2,7 @@
 
 ## Exercise I
 
-a) O(n) - one operations 
+a) O(n) - one operation
 
 
 b) O(n log n) - nested loops and few different operations
