@@ -97,8 +97,22 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        '''
+            Insertion sort?
+            While the robot is able to move to the right,
+            Pick up the first item, 
+            Now move the robot to the right and compare held item with the item in front of robot,
+                if the current item in hand is larger,
+                    swap items
+                else if current item in hand is smaller continue to the right
+        '''
+        while self.can_move_right():
+            self.swap_item()
+            self.move_right()
+            if self.compare_item() == 1:
+                self.swap_item()
 
+        
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
