@@ -126,28 +126,70 @@ class SortingRobot:
         #     while self.can_move_left():
         #         self.move_left()     
 
+        '''
+            First working pass
+        '''
+        # self.set_light_on()
+        # while self.light_is_on():
+
+        #     self.set_light_off()
+            
+        #     while self.can_move_right():
+        #         self.swap_item()
+        #         self.move_right()
+            
+        #         if self.compare_item() == 1:
+        #             self.swap_item()
+        #             self.move_left()
+        #             self.swap_item()
+        #             self.move_right()
+        #             self.set_light_on()
+        #         else:
+        #             self.move_left()
+        #             self.swap_item()
+        #             self.move_right()
+
+        #     while self.can_move_left():
+        #         self.move_left()
+
+        ''' 
+        Second pass ## after watching the video
+        '''
+
+        self.swap_item()
         self.set_light_on()
+    
         while self.light_is_on():
-
-            self.set_light_off()
+            while self.move_right():
+                if self.compare_item() > 0:
+                    self.swap_item()
             
-            while self.can_move_right():
+            if self.can_move_right() == False and self.compare_item() is None:
                 self.swap_item()
-                self.move_right()
-            
-                if self.compare_item() == 1:
-                    self.swap_item()
-                    self.move_left()
-                    self.swap_item()
-                    self.move_right()
-                    self.set_light_on()
-                else:
-                    self.move_left()
-                    self.swap_item()
-                    self.move_right()
+                self.set_light_off()
+                # stop sorting
+            else:
+                while self.move_left():
+                        if self.compare_item() is None:
+                            self.swap_item()
+                            self.move_right()
+                            self.swap_item()
+                            break
 
-            while self.can_move_left():
-                self.move_left()
+
+        # while self.can_move_right():
+        #     if self.compare_item() < 0:
+        #         self.move_right()
+        #     else:
+        #         self.move_right()
+
+        # while self.can_move_left():
+        #     self.move_left()
+
+        #     if self.compare_item == None:
+        #         self.swap_item()
+        #     else:
+        #         self.move_left()
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
